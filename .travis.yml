@@ -12,3 +12,10 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng build --prod --base-href https://bamanczak.github.io/pesel/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/pesel
+  on:
+    branch: master
